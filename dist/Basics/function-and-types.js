@@ -16,4 +16,13 @@ const combine = (a, b, result) => {
 };
 console.log(combine(3, 9, "as-string"));
 let cfunction;
-//cfunction is a function which returns number accepting two arguments namely number and string
+// this is additional specification that when a & b are number return type of add is a number , so all methods of number could be called
+// the above are called function overloads
+function add(a, b) {
+    if (typeof a === "string" || typeof b === "string") {
+        return a.toString() + b.toString();
+    }
+    else {
+        return a + b;
+    }
+}
