@@ -13,15 +13,13 @@ Objects are instances of classes, object can be also separetly decleared without
 */
 // classes name start usually with uppercase
 class Department {
-    id;
-    name;
-    // readonly keyword is typecript syntax which prevents the variable to change once it is initialized similar to 'final' in FLUTTER
-    employees = [];
     // setting a variable private restricts it's access outside the class , only methods inside the class can use or update the variable
     // by default all variables are public
     // id is added to contructor in short hand notation like in dart without the using this keyword
     constructor(id, name) {
         this.id = id;
+        // readonly keyword is typecript syntax which prevents the variable to change once it is initialized similar to 'final' in FLUTTER
+        this.employees = [];
         this.name = name;
     }
     describe() {
@@ -40,7 +38,6 @@ Inheritance , ITDepartment is inherited from Department using the 'extends' keyw
 so itdept extends all the properties and methods of dept
 */
 class ITDepartment extends Department {
-    admins;
     constructor(id, admins) {
         super(id, "IT");
         this.admins = admins;
@@ -51,9 +48,6 @@ class ITDepartment extends Department {
 const cse = new ITDepartment("neje", ["PRIYANSHU"]);
 console.log(cse);
 class AccountingDepartment extends Department {
-    reports;
-    lastReport;
-    static fiscalYear = '2000';
     // static property can only be called with class name and . and cannot be pointed with this keyword as this points to current instance of the class and staic property is NOT AVAILABLE on instance of the class
     get getLastReport() {
         return this.lastReport;
@@ -84,6 +78,7 @@ class AccountingDepartment extends Department {
     // since this method is static so it could be directly accessed on class rather than an instance of class
     ;
 }
+AccountingDepartment.fiscalYear = '2000';
 const actDept = new AccountingDepartment('id8', ['Cses']);
 actDept.addReport('hello');
 actDept.addEmployee('jdkjdkd');
@@ -108,8 +103,6 @@ such properties and methods are called static properties
 */
 console.log(AccountingDepartment.createEmployee('THIS IS FROM STATIC METHODS '));
 class Club {
-    name;
-    id;
     // abstract methods are only available in abstract classes
     constructor(name, id) {
         this.name = name;
@@ -119,7 +112,6 @@ class Club {
 }
 // also abstract classes can't be instancciated i.e now Club can only be inherited from , it's no longer a normal class
 class CodingClub extends Club {
-    static instance;
     // all classes which are inherited from abstract classes must define the abstract method, abstract methods are forced to have in childs of the class from which it is inherited
     constructor(id) {
         super('CodingClub', id);

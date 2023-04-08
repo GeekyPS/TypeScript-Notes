@@ -9,11 +9,10 @@ user1 = {
     },
 };
 class Person1 {
-    name;
-    age = 31;
     // we can implement from multiple interfaces by separating them with comma
     constructor(name) {
         this.name = name;
+        this.age = 31;
     }
     greet(phrase) {
         console.log(this.name);

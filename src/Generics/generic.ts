@@ -82,4 +82,4 @@ function createCourseGoal(
 }
 
 const people: Readonly<string[]> = ['Max','Anna'];
-// here if only const was
+// here if only const was used then elements could be pushed to people but making it readonly prevents its push

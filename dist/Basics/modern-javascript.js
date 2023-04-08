@@ -11,10 +11,7 @@ const object1 = {
     name: 'Priyanshu',
     age: 321
 };
-const object2 = {
-    hobbies: elements,
-    ...object1
-};
+const object2 = Object.assign({ hobbies: elements }, object1);
 const allElements = ["hello", ...elements];
 const [elemnt, secondElement, ...remainingElements] = elements;
 console.log(elemnt, secondElement, remainingElements);
